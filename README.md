@@ -1,7 +1,7 @@
 <div align="center">
-<h1>Hi there, I'm Dang Nguyen Duc Anh 👋</h1>
+<h1>Hi there, I'm Dang Nguyen Duc Anh</h1>
 <p><i>Friends abroad call me <b>Harry Wilson</b></i></p>
-<p>🤖 <b>AI Engineer building multi-agent systems, RAG platforms & Text2SQL agents</b></p>
+<p><b>AI Engineer building multi-agent systems, RAG platforms & Text2SQL agents</b></p>
 
 <p>
 <a href="https://www.linkedin.com/in/dangnguyenducanh"><img src="https://img.shields.io/badge/LinkedIn-Dang%20Nguyen%20Duc%20Anh-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
@@ -24,17 +24,19 @@
 
 <hr />
 
-## 🙋 About me
+## About me
 
-- 🧠 I design **multi-agent LLM systems**: DAG pipelines with parallel execution, fallback handling and real-time SSE streaming.
-- 🔎 I care about **retrieval quality and latency**: hybrid search (PgVector + BM25), Qdrant, and measuring before optimizing.
-- 🧪 I fine-tune open-weight models to replace costly cloud LLM calls.
-- 🎓 Currently researching how **AI agents turn UI designs into code** (HTML/CSS/JS): drafting, refinement and stopping policies.
-- 💬 Ask me about: LangGraph, RAG, Text2SQL, document AI, agent evaluation.
+I grew up as a chess player. For years my evenings were spent over a board, calculating lines, studying openings and learning to lose gracefully. Chess taught me to think several moves ahead, to stay patient in complicated positions and to treat every mistake as something to study rather than something to hide.
+
+Programming found me through the same curiosity. The first time I wrote code that actually worked, it felt like solving a puzzle where I also got to design the board. I came to love building things: small scripts at first, then web apps, then systems that could reason on their own. I stopped playing seriously, but the habit of calculating before moving never left.
+
+Today I'm an **AI Engineer at the Research Institute of Posts and Telecommunications**, where I build multi-agent LLM systems and retrieval platforms that run more than 110 chatbots in production. I'm also an undergraduate researcher with the **University of Luxembourg**, studying how AI agents turn UI designs into working code, while finishing my B.S. in Information Technology at **PTIT** in Hanoi. In a way I'm still playing chess, only now the pieces are agents and the goal is to make them think well together.
+
+Happy to talk about LangGraph, RAG, Text2SQL, document AI and agent evaluation.
 
 <hr />
 
-## 🏢 What I've built at work
+## What I've built at work
 
 **MASS Chatbot v2 — enterprise multi-agent chatbot & retrieval platform**
 - Built on **FastAPI + LangGraph + Qdrant**, serving **110+ production bots** with SSE streaming.
@@ -43,28 +45,28 @@
 
 <hr />
 
-## 🚀 Featured projects
+## Featured projects
 
-### 🌱 [Environmental Text2SQL](https://github.com/dangnguyenducanh/environmental-text2sql-)
+### [Environmental Text2SQL](https://github.com/dangnguyenducanh/environmental-text2sql-)
 > *Ask questions about household energy use in plain language.*
 - End-to-end **Text2SQL agents** for behaviour recommendations and electricity-usage analysis on NILM sensor data.
 - Hybrid tool/skill retrieval (**PgVector + BM25**): skill precision/recall **1.0 / 1.0**, tool precision/recall **0.786 / 0.964** across 50+ skills and tools.
 - **Stack:** FastAPI · PostgreSQL (time-scaled) · LangGraph
 
-### 🧾 Receipt Reader
+### Receipt Reader
 > *Photo in, structured receipt out, in about 0.25 s.*
 - Pipeline: OpenCV preprocessing → GPU PaddleOCR → **LayoutLMv3** field & line-item extraction → spending categories.
 - Benchmarked rules, CRF, RoBERTa and LayoutLMv3; raised SROIE field F1 from **0.65 → 0.83** and fully-correct receipts from **44% → 61%**.
 - Multi-agent error analysis found **4 training-label bugs**, each fix tested in its own git worktree.
 - **Stack:** PyTorch · LayoutLMv3 · PaddleOCR · FastAPI · PostgreSQL · React
 
-### 🎬 [YouTube Summarizer](https://github.com/dangnguyenducanh/ytb)
+### [YouTube Summarizer](https://github.com/dangnguyenducanh/ytb)
 - Fine-tuned **Qwen3 0.6B** to summarize YouTube transcripts, benchmarked for faithfulness on a golden set of 50 transcripts.
 - **Stack:** PyTorch · Hugging Face
 
 <hr />
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 <div align="center">
 
@@ -104,7 +106,7 @@
 
 <hr />
 
-## 📈 GitHub Stats
+## GitHub Stats
 
 <div align="center">
 <img height="165" src="https://github-readme-stats.vercel.app/api?username=dangnguyenducanh&show_icons=true&theme=transparent&hide_border=true" />
@@ -114,5 +116,5 @@
 <br />
 
 <div align="center">
-<sub>🗣️ Vietnamese (native) · English (IELTS 6.0) — open to AI Engineer (LLM) roles and research collaborations. Feel free to reach out! 🚀</sub>
+<sub>Vietnamese (native) · English (IELTS 6.0) — open to AI Engineer (LLM) roles and research collaborations. Feel free to reach out!</sub>
 </div>
