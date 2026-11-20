@@ -60,6 +60,13 @@ Happy to talk about LangGraph, RAG, Text2SQL, document AI and agent evaluation.
 - Multi-agent error analysis found **4 training-label bugs**, each fix tested in its own git worktree.
 - **Stack:** PyTorch · LayoutLMv3 · PaddleOCR · FastAPI · PostgreSQL · React
 
+### [Vector Search Engine (from scratch)](https://github.com/dangnguyenducanh/vector_search-from-scratch)
+> *Search by meaning, not keywords, with every index written by hand.*
+- Exact search plus an **HNSW** index built from scratch in **NumPy** (no FAISS or hnswlib): per-layer graph, diversity-based neighbor selection, beam search, pickle-free persistence.
+- **0.98 recall@10 at 0.52 ms/query** on 120k real sentence embeddings, **16.6× faster** than single-thread exact search; recall within **0.004 of hnswlib (C++)** at identical settings.
+- Head-to-head with an open-source pure-Python HNSW on the same eval: recall@10 **0.91 vs 0.62**, **~34× faster** queries and index build.
+- **Stack:** Python · NumPy · sentence-transformers
+
 ### [YouTube Summarizer](https://github.com/dangnguyenducanh/ytb)
 - Fine-tuned **Qwen3 0.6B** to summarize YouTube transcripts, benchmarked for faithfulness on a golden set of 50 transcripts.
 - **Stack:** PyTorch · Hugging Face
