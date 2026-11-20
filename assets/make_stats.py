@@ -95,7 +95,7 @@ def summarize(u: dict) -> dict:
 # --- drawing helpers -------------------------------------------------------------------------
 def font_face(weight: str, css_weight: int, text: str) -> str:
     font = TTFont(os.path.join(FONTS, f"Lato-{weight}-latin.ttf"), recalcTimestamp=False)
-    sub = Subsetter(Options())
+    sub = Subsetter(Options(hinting=False))  # hinting is useless in an SVG and costs ~30%
     sub.populate(text=text)
     sub.subset(font)
     buf = io.BytesIO()
@@ -119,13 +119,21 @@ with open(os.path.join(FONTS, "pieces.json"), encoding="utf-8") as _f:
     PIECES = json.load(_f)
 
 
-def piece(ch: str, x: float, y: float, h: float, fill: str = GOLD) -> str:
-    """Chess piece glyph, bottom-center at (x, y), h px tall."""
+def piece(ch: str, x: float, y: float, h: float, fill: str = GOLD, stroke: str = "", white: bool = False) -> str:
+    """Chess piece glyph, bottom-center at (x, y), h px tall.
+
+    white=True draws a proper white piece: the solid glyph as a cream silhouette with DejaVu's
+    white-piece outline (U+2654..2659) on top, so the inner details read as lines, not holes."""
     p = PIECES[ch]
     x0, y0, x1, y1 = p["bounds"]
     k = h / (y1 - y0)
-    return (f'<g transform="translate({x:.1f},{y:.1f}) scale({k:.5f},{-k:.5f}) translate({-(x0 + x1) / 2:.1f},{-y0:.1f})">'
-            f'<path d="{p["d"]}" fill="{fill}"/></g>')
+    tf = f'translate({x:.1f},{y:.1f}) scale({k:.5f},{-k:.5f}) translate({-(x0 + x1) / 2:.1f},{-y0:.1f})'
+    if white:
+        outline = PIECES[chr(ord(ch) - 6)]["d"]
+        return (f'<g transform="{tf}"><path d="{p["d"]}" fill="{CREAM}" stroke="{CREAM}" stroke-width="3" '
+                f'stroke-linejoin="round" vector-effect="non-scaling-stroke"/><path d="{outline}" fill="{INK}"/></g>')
+    line = f' stroke="{stroke}" stroke-width="1.6" stroke-linejoin="round" vector-effect="non-scaling-stroke"' if stroke else ""
+    return f'<g transform="{tf}"><path d="{p["d"]}" fill="{fill}"{line}/></g>'
 
 
 PAWN = ('<path d="M-40,0 Q-42,-16 -27,-20 L27,-20 Q42,-16 40,0 Z M-22,-20 Q-12,-40 -12,-58 L12,-58 Q12,-40 22,-20 Z" '

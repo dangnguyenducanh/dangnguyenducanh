@@ -26,6 +26,12 @@
 
 ## About me
 
+<img src="assets/about.svg" width="100%" alt="About me, as a chess opening: 1. e4, grew up playing chess; 2. Nf3, my first working program; 3. Bc4, scripts, web apps, then systems that reason; 4. O-O, AI Engineer at RIPT building multi-agent LLM systems behind 110+ production chatbots; 5. d3, researching UI-to-code agents with the University of Luxembourg." />
+
+<details>
+<summary>the long version</summary>
+<br />
+
 I grew up as a chess player. For years my evenings were spent over a board, calculating lines, studying openings and learning to lose gracefully. Chess taught me to think several moves ahead, to stay patient in complicated positions and to treat every mistake as something to study rather than something to hide.
 
 Programming found me through the same curiosity. The first time I wrote code that actually worked, it felt like solving a puzzle where I also got to design the board. I came to love building things: small scripts at first, then web apps, then systems that could reason on their own. I stopped playing seriously, but the habit of calculating before moving never left.
@@ -34,89 +40,30 @@ Today I'm an **AI Engineer at the Research Institute of Posts and Telecommunicat
 
 Happy to talk about LangGraph, RAG, Text2SQL, document AI and agent evaluation.
 
+</details>
+
 <hr />
 
 ## What I work on
 
-**AI Engineer · Research Institute of Posts and Telecommunications** · *Mar 2025 – present*
-
-I design and build the LLM platform behind the institute's chatbots, from agent orchestration to search to the models themselves:
-- **Multi-agent systems:** LangGraph pipelines with parallel steps, automatic fallbacks and real-time streaming, running **110+ chatbots in production**.
-- **Retrieval & search:** vector and keyword search services on Qdrant and FastAPI, profiled and tuned for low latency.
-- **Model distillation:** fine-tuning local open-weights models on production conversations to replace paid cloud-LLM calls.
-
-**Undergraduate Researcher · University of Luxembourg** · *Mar 2026 – present*
-- Multi-step AI agents that turn UI designs into working HTML/CSS/JavaScript: refinement loops, visual feedback and stopping policies.
+<img src="assets/work.svg" width="100%" alt="What I work on. AI Engineer at the Research Institute of Posts and Telecommunications since March 2025: multi-agent systems (110+ chatbots in production), retrieval and search on Qdrant and FastAPI, and model distillation into local open-weights models. Undergraduate researcher with the University of Luxembourg since March 2026: multi-step agents that turn UI designs into working HTML/CSS/JavaScript." />
 
 <hr />
 
 ## Featured projects
 
-### [Energy Copilot (Text2SQL Agent)](https://github.com/dangnguyenducanh/environmental-text2sql-)
-> *Ask questions about household energy use in plain language.*
-- **11-node LangGraph agent** answering questions on household electricity use, cost and savings over smart-meter and NILM time series; the LLM fills a query plan that code compiles to **parameterized SQL**.
-- Every query passes a **sqlglot guard**, runs read-only and scoped to one home, and every number in an answer traces back to a query result.
-- Routes across **11 skills and 25 tools** with bge-m3 embeddings in a **pgvector HNSW** index: skill hit@1 **1.0**, tool precision/recall **0.786 / 0.964** on a 28-case end-to-end set.
-- **Stack:** Python · FastAPI · TimescaleDB · pgvector · LangGraph
-
-### [Receipt Reader](https://github.com/dangnguyenducanh/receipts-reader)
-> *Photo in, structured receipt out, in about 0.25 s.*
-- Pipeline: OpenCV preprocessing → GPU PaddleOCR → **LayoutLMv3** field & line-item extraction → spending categories.
-- Benchmarked rules, CRF, RoBERTa and LayoutLMv3; raised SROIE field F1 from **0.65 → 0.83** and fully-correct receipts from **44% → 61%**.
-- Multi-agent error analysis found **4 training-label bugs**, each fix tested in its own git worktree.
-- **Stack:** PyTorch · LayoutLMv3 · PaddleOCR · FastAPI · PostgreSQL · React
-
-### [Vector Search Engine (from scratch)](https://github.com/dangnguyenducanh/vector_search-from-scratch)
-> *Search by meaning, not keywords, with every index written by hand.*
-- Exact search plus an **HNSW** index built from scratch in **NumPy** (no FAISS or hnswlib): per-layer graph, diversity-based neighbor selection, beam search, pickle-free persistence.
-- **0.98 recall@10 at 0.52 ms/query** on 120k real sentence embeddings, **16.6× faster** than single-thread exact search; recall within **0.004 of hnswlib (C++)** at identical settings.
-- Head-to-head with an open-source pure-Python HNSW on the same eval: recall@10 **0.91 vs 0.62**, **~34× faster** queries and index build.
-- **Stack:** Python · NumPy · sentence-transformers
-
-### [YouTube Summarizer](https://github.com/dangnguyenducanh/ytb)
-- Fine-tuned **Qwen3 0.6B** to summarize YouTube transcripts, benchmarked for faithfulness on a golden set of 50 transcripts.
-- **Stack:** PyTorch · Hugging Face
+<p align="center">
+<a href="https://github.com/dangnguyenducanh/environmental-text2sql-"><img src="assets/proj-energy.svg" width="49%" alt="Energy Copilot: an 11-node LangGraph Text2SQL agent for household electricity, with guarded parameterized SQL; skill hit@1 1.0, tool precision/recall 0.786 / 0.964." /></a>
+<a href="https://github.com/dangnguyenducanh/receipts-reader"><img src="assets/proj-receipts.svg" width="49%" alt="Receipt Reader: OpenCV, PaddleOCR and LayoutLMv3 turn a receipt photo into structured data in about 0.25 s; SROIE field F1 0.65 to 0.83." /></a>
+<a href="https://github.com/dangnguyenducanh/vector_search-from-scratch"><img src="assets/proj-vector.svg" width="49%" alt="Vector Search Engine from scratch: HNSW in NumPy, 0.98 recall@10 at 0.52 ms on 120k embeddings, 16.6x faster than exact search." /></a>
+<a href="https://github.com/dangnguyenducanh/ytb"><img src="assets/proj-ytb.svg" width="49%" alt="YouTube Summarizer: Qwen3-0.6B turns a YouTube link into structured notes; fine-tuning and faithfulness evaluation in progress." /></a>
+</p>
 
 <hr />
 
 ## Tech Stack
 
-<div align="center">
-
-**Languages**<br />
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
-<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
-<img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
-<img src="https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" />
-
-**AI / LLM**<br />
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
-<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
-<img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" />
-<img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" />
-<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" />
-<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" />
-<img src="https://img.shields.io/badge/PaddleOCR-0062B0?style=for-the-badge" />
-
-**Backend & Data**<br />
-<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
-<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
-<img src="https://img.shields.io/badge/PgVector-336791?style=for-the-badge&logo=postgresql&logoColor=white" />
-<img src="https://img.shields.io/badge/Qdrant-DC244C?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white" />
-
-**Frontend & Apps**<br />
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-<img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" />
-
-**Tools**<br />
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-<img src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" />
-<img src="https://img.shields.io/badge/Tree--sitter-2E7D32?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" />
-
-</div>
+<img src="assets/stack.svg" width="100%" alt="Tech stack, ranked like chess pieces. Languages: Python, TypeScript, Java, C++, C#. AI and LLM: PyTorch, NumPy, Hugging Face, LangGraph, LangChain, OpenCV, PaddleOCR. Backend and data: FastAPI, PostgreSQL, pgvector, Qdrant, Pydantic. Frontend and apps: React, Streamlit. Tools: Git, Pytest, tree-sitter, Kaggle." />
 
 <hr />
 
