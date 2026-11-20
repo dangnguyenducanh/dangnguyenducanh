@@ -1,11 +1,10 @@
+<img src="assets/banner.svg" width="100%" alt="Hello, I'm Dang Nguyen Duc Anh, a.k.a. Harry Wilson: chess player turned AI Engineer building multi-agent systems, RAG platforms and Text2SQL agents. Now: AI Engineer at RIPT, UI2Code research with the University of Luxembourg." />
+
 <div align="center">
-<h1>Hi there, I'm Dang Nguyen Duc Anh</h1>
-<p><i>Friends abroad call me <b>Harry Wilson</b></i></p>
-<p><b>AI Engineer building multi-agent systems, RAG platforms & Text2SQL agents</b></p>
 
 <p>
-<a href="https://www.linkedin.com/in/dangnguyenducanh"><img src="https://img.shields.io/badge/LinkedIn-Dang%20Nguyen%20Duc%20Anh-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="mailto:ducanhdn.ptit@gmail.com"><img src="https://img.shields.io/badge/Email-ducanhdn.ptit-red?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+<a href="https://www.linkedin.com/in/dangnguyenducanh"><img src="https://img.shields.io/badge/LinkedIn-Dang%20Nguyen%20Duc%20Anh-fcd34d?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=16195a" alt="LinkedIn" /></a>
+<a href="mailto:ducanhdn.ptit@gmail.com"><img src="https://img.shields.io/badge/Email-ducanhdn.ptit-fcd34d?style=for-the-badge&logo=gmail&logoColor=white&labelColor=16195a" alt="Email" /></a>
 </p>
 
 <table style="border: none;">
@@ -52,11 +51,12 @@ I design and build the LLM platform behind the institute's chatbots, from agent 
 
 ## Featured projects
 
-### [Environmental Text2SQL](https://github.com/dangnguyenducanh/environmental-text2sql-)
+### [Energy Copilot (Text2SQL Agent)](https://github.com/dangnguyenducanh/environmental-text2sql-)
 > *Ask questions about household energy use in plain language.*
-- End-to-end **Text2SQL agents** for behaviour recommendations and electricity-usage analysis on NILM sensor data.
-- Hybrid tool/skill retrieval (**PgVector + BM25**): skill precision/recall **1.0 / 1.0**, tool precision/recall **0.786 / 0.964** across 50+ skills and tools.
-- **Stack:** FastAPI · PostgreSQL (time-scaled) · LangGraph
+- **11-node LangGraph agent** answering questions on household electricity use, cost and savings over smart-meter and NILM time series; the LLM fills a query plan that code compiles to **parameterized SQL**.
+- Every query passes a **sqlglot guard**, runs read-only and scoped to one home, and every number in an answer traces back to a query result.
+- Routes across **11 skills and 25 tools** with bge-m3 embeddings in a **pgvector HNSW** index: skill hit@1 **1.0**, tool precision/recall **0.786 / 0.964** on a 28-case end-to-end set.
+- **Stack:** Python · FastAPI · TimescaleDB · pgvector · LangGraph
 
 ### [Receipt Reader](https://github.com/dangnguyenducanh/receipts-reader)
 > *Photo in, structured receipt out, in about 0.25 s.*
