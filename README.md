@@ -53,7 +53,7 @@ Happy to talk about LangGraph, RAG, Text2SQL, document AI and agent evaluation.
 - Hybrid tool/skill retrieval (**PgVector + BM25**): skill precision/recall **1.0 / 1.0**, tool precision/recall **0.786 / 0.964** across 50+ skills and tools.
 - **Stack:** FastAPI · PostgreSQL (time-scaled) · LangGraph
 
-### Receipt Reader
+### [Receipt Reader](https://github.com/dangnguyenducanh/receipts-reader)
 > *Photo in, structured receipt out, in about 0.25 s.*
 - Pipeline: OpenCV preprocessing → GPU PaddleOCR → **LayoutLMv3** field & line-item extraction → spending categories.
 - Benchmarked rules, CRF, RoBERTa and LayoutLMv3; raised SROIE field F1 from **0.65 → 0.83** and fully-correct receipts from **44% → 61%**.
