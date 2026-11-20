@@ -36,12 +36,17 @@ Happy to talk about LangGraph, RAG, Text2SQL, document AI and agent evaluation.
 
 <hr />
 
-## What I've built at work
+## What I work on
 
-**MASS Chatbot v2 — enterprise multi-agent chatbot & retrieval platform**
-- Built on **FastAPI + LangGraph + Qdrant**, serving **110+ production bots** with SSE streaming.
-- Cut documentation-search latency from **~16 ms → ~7 ms** and keyword query latency from **95 ms → 5 ms**.
-- Distilled cloud-LLM conversational policies into a local open-weights model (full fine-tuning on **110k+ chat messages**), saving **$1k+/month** in API costs.
+**AI Engineer · Research Institute of Posts and Telecommunications** · *Mar 2025 – present*
+
+I design and build the LLM platform behind the institute's chatbots, from agent orchestration to search to the models themselves:
+- **Multi-agent systems:** LangGraph pipelines with parallel steps, automatic fallbacks and real-time streaming, running **110+ chatbots in production**.
+- **Retrieval & search:** vector and keyword search services on Qdrant and FastAPI, profiled and tuned for low latency.
+- **Model distillation:** fine-tuning local open-weights models on production conversations to replace paid cloud-LLM calls.
+
+**Undergraduate Researcher · University of Luxembourg** · *Mar 2026 – present*
+- Multi-step AI agents that turn UI designs into working HTML/CSS/JavaScript: refinement loops, visual feedback and stopping policies.
 
 <hr />
 
