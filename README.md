@@ -120,15 +120,15 @@ I design and build the LLM platform behind the institute's chatbots, from agent 
 
 <hr />
 
-## GitHub Stats
+## Match stats ♟
 
 <div align="center">
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=dangnguyenducanh&show_icons=true&theme=transparent&hide_border=true" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=dangnguyenducanh&layout=compact&theme=transparent&hide_border=true" />
+<img src="assets/stats.svg" width="100%" alt="Match report: my GitHub year as a chess game, with contributions, commits, pull requests, public repos, stars and longest streak, a made-up dev Elo, my languages as chess pieces, and a pawn heckling the numbers. Refreshed daily." />
+<img src="assets/munch.svg" width="100%" alt="Animated: a googly-eyed pawn hops across my contribution calendar and eats every active day, then burps. Refreshed daily." />
 </div>
 
 <br />
 
 <div align="center">
-<sub>Vietnamese (native) · English (IELTS 6.0) — open to AI Engineer (LLM) roles and research collaborations. Feel free to reach out!</sub>
+<sub>Vietnamese (native) · English (IELTS 6.0) — open to AI Engineer (LLM) roles and research collaborations. Your move ♟</sub>
 </div>
