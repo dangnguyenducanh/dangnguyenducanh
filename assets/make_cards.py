@@ -1,6 +1,5 @@
 """Static profile cards in the same night-chessboard style as the stats cards.
 
-  assets/about.svg       "the opening": life as a chess scoresheet + a mini board playing the Italian Game
   assets/work.svg        "current position": what I work on
   assets/proj-*.svg      one clickable card per featured project
   assets/stack.svg       "the army": the tech stack, ranked like chess pieces
@@ -30,7 +29,6 @@ class Card:
         self.parts: list[str] = []
         self.css: list[str] = []
         self.text: list[str] = []
-        self.defs: list[str] = []
 
     def t(self, s: str) -> str:
         self.text.append(s)
@@ -93,7 +91,7 @@ class Card:
                + "".join(self.css) + TWINKLE + REDUCED)
         return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {self.w} {self.h}" width="{self.w}" height="{self.h}" '
                 f'role="img" aria-label="{html.escape(self.label)}"><title>{esc(self.title)}</title>'
-                f"<style>{css}</style><defs>{DEFS}{''.join(self.defs)}</defs>"
+                f"<style>{css}</style><defs>{DEFS}</defs>"
                 f'<rect width="{self.w}" height="{self.h}" rx="22" fill="url(#bg)"/>'
                 f'<rect width="{self.w}" height="{self.h}" rx="22" fill="url(#chk)" opacity=".035"/>'
                 f"{stars_svg(self.w, 70, self.w // 22, self.seed)}" + "\n".join(self.parts) + "</svg>\n")
@@ -101,72 +99,6 @@ class Card:
 
 def panel(x: float, y: float, w: float, h: float) -> str:
     return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="16" fill="#0b0f2e" fill-opacity=".6" stroke="#fff" stroke-opacity=".12"/>'
-
-
-# --- about: the opening ---------------------------------------------------------------------------
-LIFE = [
-    ("1. e4", "Grew up over a chessboard: calculating lines, studying openings, learning to lose gracefully."),
-    ("2. Nf3", "Wrote my first program that actually worked. A puzzle where I also got to design the board."),
-    ("3. Bc4", "Small scripts, then web apps, then systems that reason on their own."),
-    ("4. O-O!", "Castled into AI Engineer @ RIPT: multi-agent LLM systems behind 110+ production chatbots."),
-    ("5. d3", "Quiet but deep: researching UI-to-code agents with the University of Luxembourg."),
-]
-# Italian Game, one ply per 1.35 s; castling moves two pieces at once
-PLIES = [[("e2", "e4")], [("e7", "e5")], [("g1", "f3")], [("b8", "c6")], [("f1", "c4")], [("f8", "c5")],
-         [("e1", "g1"), ("h1", "f1")], [("g8", "f6")], [("d2", "d3")], [("d7", "d6")]]
-
-
-def about_svg() -> str:
-    c = Card(900, 400, "About me: the opening",
-             "About me, as a chess opening. 1. e4: grew up playing chess. 2. Nf3: my first working program. "
-             "3. Bc4: scripts, web apps, then systems that reason. 4. O-O: AI Engineer at RIPT building multi-agent LLM "
-             "systems behind 110+ production chatbots. 5. d3: researching UI-to-code agents with the University of "
-             "Luxembourg. A mini chessboard plays the Italian Game alongside.", seed=11)
-    c.header("ABOUT ME · THE OPENING", "Chess player. Then programmer. Now the pieces are agents.", width=590)
-    T, t0, gap, move = 16.0, 1.0, 1.35, .45
-    start = [t0 + i * gap for i in range(len(PLIES))]
-    for k, (notation, line) in enumerate(LIFE):
-        y = 128 + k * 46
-        a = start[2 * k] / T * 100
-        b = (start[2 * k + 2] / T * 100) if 2 * k + 2 < len(PLIES) else 96
-        c.css.append(f"@keyframes hl{k}{{0%,{a:.2f}%{{opacity:0}}{a + 1:.2f}%,{b:.2f}%{{opacity:1}}{b + 1:.2f}%,100%{{opacity:0}}}}"
-                     f".hl{k}{{opacity:0;animation:hl{k} {T}s linear infinite}}")
-        c.add(f'<rect class="hl{k}" x="26" y="{y - 21}" width="600" height="42" rx="10" fill="{GOLD}" fill-opacity=".13" '
-              f'stroke="{GOLD}" stroke-opacity=".5"/>',
-              f'<text x="40" y="{y + 1}" font-size="16" font-weight="900" fill="{GOLD}">{c.t(notation)}</text>')
-        c.text_block(116, y - 3 if text_width(line, 13.5) > 495 else y + 1, line, 495, 13.5, "Bold", CREAM, lh=16)
-    c.text_block(40, 376, "Finishing a B.S. at PTIT, Hanoi. Still playing chess; now the pieces are agents.", 590, 13, "Bold", MUTED)
-
-    # mini board
-    bx, by, sq = 652, 100, 26
-    files = "abcdefgh"
-    xy = lambda s: (bx + files.index(s[0]) * sq, by + (8 - int(s[1])) * sq)
-    c.add("".join(f'<rect x="{bx + f * sq}" y="{by + r * sq}" width="{sq}" height="{sq}" fill="{"#7468d6" if (f + r) % 2 else "#e9e2ff"}" '
-                  f'fill-opacity="{.55 if (f + r) % 2 else .22}"/>' for f in range(8) for r in range(8)),
-          f'<rect x="{bx}" y="{by}" width="{8 * sq}" height="{8 * sq}" fill="none" stroke="{GOLD}" stroke-opacity=".7"/>')
-    back = "RNBQKBNR"
-    glyph = {"K": "♚", "Q": "♛", "R": "♜", "B": "♝", "N": "♞", "P": "♟"}
-    setup = {}
-    for i, f in enumerate(files):
-        setup[f"{f}1"], setup[f"{f}2"], setup[f"{f}7"], setup[f"{f}8"] = ("w", back[i]), ("w", "P"), ("b", "P"), ("b", back[i])
-    movers = {fr: (to, start[p]) for p, ply in enumerate(PLIES) for fr, to in ply}
-    for kind, g in glyph.items():  # each piece shape once; the 32 pieces reference it with <use>
-        c.defs.append(f'<g id="w{kind}">{piece(g, sq / 2, sq - 3, 20, white=True)}</g>'
-                      f'<g id="b{kind}">{piece(g, sq / 2, sq - 3, 20, BLACK_PIECE, GOLD)}</g>')
-    for i, (sqr, (color, kind)) in enumerate(sorted(setup.items())):
-        x, y = xy(sqr)
-        inner = f'<use href="#{color}{kind}"/>'
-        if sqr in movers:
-            to, t = movers[sqr]
-            tx, ty = xy(to)
-            a, b = t / T * 100, (t + move) / T * 100
-            c.css.append(f"@keyframes m{i}{{0%,{a:.2f}%{{transform:none}}{b:.2f}%,96%{{transform:translate({tx - x}px,{ty - y}px)}}"
-                         f"100%{{transform:none}}}}.m{i}{{animation:m{i} {T}s ease-in-out infinite}}")
-            inner = f'<g class="m{i}">{inner}</g>'
-        c.add(f'<g transform="translate({x},{y})">{inner}</g>')
-    c.add(f'<text x="{bx + 4 * sq}" y="{by + 8 * sq + 22}" text-anchor="middle" font-size="11.5" font-weight="400" '
-          f'fill="{MUTED}">{c.t("the Italian Game, on loop")}</text>')
-    return c.render()
 
 
 # --- work: current position ---------------------------------------------------------------------------
@@ -306,7 +238,7 @@ def stack_svg() -> str:
 
 
 def main() -> None:
-    out = {"about.svg": about_svg(), "work.svg": work_svg(), "stack.svg": stack_svg()}
+    out = {"work.svg": work_svg(), "stack.svg": stack_svg()}
     for p in PROJECTS:
         out[f"proj-{p[0]}.svg"] = project_svg(*p)
     for name, svg in out.items():

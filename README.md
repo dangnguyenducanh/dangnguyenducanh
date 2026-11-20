@@ -26,12 +26,6 @@
 
 ## About me
 
-<img src="assets/about.svg" width="100%" alt="About me, as a chess opening: 1. e4, grew up playing chess; 2. Nf3, my first working program; 3. Bc4, scripts, web apps, then systems that reason; 4. O-O, AI Engineer at RIPT building multi-agent LLM systems behind 110+ production chatbots; 5. d3, researching UI-to-code agents with the University of Luxembourg." />
-
-<details>
-<summary>the long version</summary>
-<br />
-
 I grew up as a chess player. For years my evenings were spent over a board, calculating lines, studying openings and learning to lose gracefully. Chess taught me to think several moves ahead, to stay patient in complicated positions and to treat every mistake as something to study rather than something to hide.
 
 Programming found me through the same curiosity. The first time I wrote code that actually worked, it felt like solving a puzzle where I also got to design the board. I came to love building things: small scripts at first, then web apps, then systems that could reason on their own. I stopped playing seriously, but the habit of calculating before moving never left.
@@ -39,8 +33,6 @@ Programming found me through the same curiosity. The first time I wrote code tha
 Today I'm an **AI Engineer at the Research Institute of Posts and Telecommunications**, where I build multi-agent LLM systems and retrieval platforms that run more than 110 chatbots in production. I'm also an undergraduate researcher with the **University of Luxembourg**, studying how AI agents turn UI designs into working code, while finishing my B.S. in Information Technology at **PTIT** in Hanoi. In a way I'm still playing chess, only now the pieces are agents and the goal is to make them think well together.
 
 Happy to talk about LangGraph, RAG, Text2SQL, document AI and agent evaluation.
-
-</details>
 
 <hr />
 
