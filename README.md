@@ -1,8 +1,9 @@
-<img src="assets/banner.svg" width="100%" alt="Hello, I'm Dang Nguyen Duc Anh, a.k.a. Harry Wilson: chess player turned AI Engineer building multi-agent systems, RAG platforms and Text2SQL agents. Now: AI Engineer at RIPT, UI2Code research with the University of Luxembourg." />
+<a href="https://dnda-port.vercel.app"><img src="assets/banner.svg" width="100%" alt="Hello, I'm Dang Nguyen Duc Anh, a.k.a. Harry Wilson: chess player turned AI Engineer building multi-agent systems, RAG platforms and Text2SQL agents. Now: AI Engineer at RIPT, UI2Code research with the University of Luxembourg. Opens my portfolio." /></a>
 
 <div align="center">
 
 <p>
+<a href="https://dnda-port.vercel.app"><img src="https://img.shields.io/badge/Portfolio-dnda--port.vercel.app-fcd34d?style=for-the-badge&logo=vercel&logoColor=white&labelColor=16195a" alt="Portfolio" /></a>
 <a href="https://www.linkedin.com/in/dangnguyenducanh"><img src="https://img.shields.io/badge/LinkedIn-Dang%20Nguyen%20Duc%20Anh-fcd34d?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=16195a" alt="LinkedIn" /></a>
 <a href="mailto:ducanhdn.ptit@gmail.com"><img src="https://img.shields.io/badge/Email-ducanhdn.ptit-fcd34d?style=for-the-badge&logo=gmail&logoColor=white&labelColor=16195a" alt="Email" /></a>
 </p>
