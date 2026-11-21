@@ -47,7 +47,7 @@ Happy to talk about LangGraph, RAG, Text2SQL, document AI and agent evaluation.
 <p align="center">
 <a href="https://github.com/dangnguyenducanh/environmental-text2sql-"><img src="assets/proj-energy.svg" width="49%" alt="Energy Copilot: an 11-node LangGraph Text2SQL agent for household electricity, with guarded parameterized SQL; skill hit@1 1.0, tool precision/recall 0.786 / 0.964." /></a>
 <a href="https://github.com/dangnguyenducanh/receipts-reader"><img src="assets/proj-receipts.svg" width="49%" alt="Receipt Reader: OpenCV, PaddleOCR and LayoutLMv3 turn a receipt photo into structured data in about 0.25 s; SROIE field F1 0.65 to 0.83." /></a>
-<a href="https://github.com/dangnguyenducanh/vector_search-from-scratch"><img src="assets/proj-vector.svg" width="49%" alt="Vector Search Engine from scratch: HNSW in NumPy, 0.98 recall@10 at 0.52 ms on 120k embeddings, 16.6x faster than exact search." /></a>
+<a href="https://github.com/dangnguyenducanh/vector_search-from-scratch"><img src="assets/proj-vector.svg" width="49%" alt="Vector Search Engine from scratch: HNSW in NumPy and Numba with deletes and filters, 0.98 recall@10 at 0.15 ms on 120k embeddings, 60x faster than exact search." /></a>
 <a href="https://github.com/dangnguyenducanh/ytb"><img src="assets/proj-ytb.svg" width="49%" alt="YouTube Summarizer: Qwen3-0.6B turns a YouTube link into structured notes; fine-tuning and faithfulness evaluation in progress." /></a>
 </p>
 
