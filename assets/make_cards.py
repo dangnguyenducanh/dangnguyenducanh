@@ -159,6 +159,12 @@ PROJECTS = [
       "Captions or local faster-whisper; long videos split into ≤2,048-token parts.",
       "Fine-tuning it and scoring faithfulness on a 50-transcript golden set (in progress)."],
      ["PyTorch", "Hugging Face", "FastAPI"]),
+    ("finance", "♛", "CHAT BOTS · FULL-STACK", "Zalo + Telegram Finance App", "Text the bot \"pho 45k\" and it lands in your budget.",
+     ["Telegram and Zalo bots: a line of text or a receipt photo becomes a draft you confirm.",
+      "Wallets, categories, monthly budgets with alerts, stats; Vietnamese and English.",
+      "Built solo in 29 reviewed PRs: 366 automated tests, 33 bugs found and fixed.",
+      "Live: sochitieu-btl.vercel.app"],
+     ["React", "TypeScript", "Express", "MongoDB", "PaddleOCR"]),
 ]
 
 

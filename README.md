@@ -49,6 +49,10 @@ Happy to talk about LangGraph, RAG, Text2SQL, document AI and agent evaluation.
 <a href="https://github.com/dangnguyenducanh/receipts-reader"><img src="assets/proj-receipts.svg" width="49%" alt="Receipt Reader: OpenCV, PaddleOCR and LayoutLMv3 turn a receipt photo into structured data in about 0.25 s; SROIE field F1 0.65 to 0.83." /></a>
 <a href="https://github.com/dangnguyenducanh/vector_search-from-scratch"><img src="assets/proj-vector.svg" width="49%" alt="Vector Search Engine from scratch: HNSW in NumPy and Numba with deletes and filters, 0.98 recall@10 at 0.15 ms on 120k embeddings, 60x faster than exact search." /></a>
 <a href="https://github.com/dangnguyenducanh/ytb"><img src="assets/proj-ytb.svg" width="49%" alt="YouTube Summarizer: Qwen3-0.6B turns a YouTube link into structured notes; fine-tuning and faithfulness evaluation in progress." /></a>
+<a href="https://github.com/dangnguyenducanh/Zalo-Tele-intergrated-financial-apps"><img src="assets/proj-finance.svg" width="49%" alt="Zalo + Telegram Finance App: send a line like pho 45k or a receipt photo to a Telegram or Zalo bot and it becomes a transaction; wallets, budgets and stats in a React + Express + MongoDB web app, 366 automated tests, live at sochitieu-btl.vercel.app." /></a>
+</p>
+<p align="center">
+<a href="https://sochitieu-btl.vercel.app"><img src="https://img.shields.io/badge/Finance%20app%20live-sochitieu--btl.vercel.app-fcd34d?style=for-the-badge&logo=vercel&logoColor=white&labelColor=16195a" alt="Finance app live demo: sochitieu-btl.vercel.app" /></a>
 </p>
 
 <hr />
